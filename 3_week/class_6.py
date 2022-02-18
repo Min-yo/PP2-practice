@@ -6,7 +6,8 @@ class Prime:
         for x in self.liste:
             flag = True
             for i in range(2, x):
-                if(x % i == 0):
+                t = lambda y : True if (y % i == 0) else None
+                if t(x):
                     flag = False
             if flag:
                 ans.append(x)
