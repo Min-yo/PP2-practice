@@ -1,0 +1,8 @@
+Number 
+Of
+Lines
+In
+A
+Text
+File
+['apple', 'banana', 'cherry']
