@@ -6,6 +6,7 @@ import time
 import pygame
 
 BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
 LINE_COLOR = (50, 50, 50)
 HEIGHT = 400
 WIDTH = 400
@@ -112,7 +113,7 @@ def main():
     CLOCK = pygame.time.Clock()
     SCREEN.fill(BLACK)
     FPS = 5
-
+    score_font = pygame.font.SysFont("Verdana", 20)
     snake = Snake()
     wall = Wall(snake.level)
     food = Food(wall)
@@ -167,6 +168,11 @@ def main():
         wall.draw()
         snake.draw()
         drawGrid()
+
+        level_img = score_font.render(str(snake.level), True, WHITE)
+        SCREEN.blit(level_img, (10, 35))
+        score_img = score_font.render(str(SCORE), True, WHITE)
+        SCREEN.blit(score_img, (10, 10))
 
         pygame.display.update()
         CLOCK.tick(FPS)
